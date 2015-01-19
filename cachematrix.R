@@ -3,12 +3,12 @@
 
 ## Write a short comment describing this function
 
-# Returns a list of getter and setter function defined in
+# Returns a list of getter and setter functions defined in
 # this functions closure. These getters and setters manipulate
 # the cache variable which contains the matrix. The returned list
-# is able to access the functions and therefore, the internally 
+# is able to access these functions and therefore, the internally 
 # managed cached variable to maniulate it (through the mini 
-# environment) maintained in this makeCacheMatrix function.
+# environment maintained in this makeCacheMatrix function).
 makeCacheMatrix <- function(x = matrix()) {
 
   # Initialize the cache to NULL.
@@ -29,7 +29,8 @@ makeCacheMatrix <- function(x = matrix()) {
   # Returns the value of the internal cache or NULL if no such value exists.
   getCache <- function() cache
   
-  # Create and return the list representing the 'cachable matrix' object.
+  # Create and return the list representing the 'cachable matrix' object
+  # with getter and setter functions.
   list(set = set,
        get = get,
        setCache = setCache,
@@ -40,7 +41,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ## Write a short comment describing this function
 
 # Returns the inverse of the specified 'cachable matrix' created
-# by the makeCacheMatrix above. Before computing the value for 
+# by the makeCacheMatrix() function above. Before computing the value for 
 # the inverse, this function however checks the state of the 
 # internal cache maintained by the 'cachable matrix'. If it 
 # finds it NULL (thus never used), is computes the inverse and
@@ -71,7 +72,7 @@ cacheSolve <- function(x, ...) {
   inv
 }
 
-# Example test.
+# Some example tests.
 
 # Create a new 'cachable matrix'.
 myMat <- makeCacheMatrix(matrix(rnorm(25), 5))
